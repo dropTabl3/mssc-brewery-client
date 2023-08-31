@@ -19,7 +19,6 @@ class BreweryClientTest {
     @Test
     void getBeerById() {
         BeerDto beerDto = breweryClient.getBeerById(UUID.randomUUID());
-
         assertNotNull(beerDto);
     }
 
@@ -28,5 +27,10 @@ class BreweryClientTest {
         URI uri = breweryClient.saveNewBeer(BeerDto.builder().beerName("porky dee").build());
         assertNotNull(uri);
         System.out.println(uri.toString());
+    }
+
+    @Test
+    void updateBeer() {
+        breweryClient.updateBeer(UUID.randomUUID(), BeerDto.builder().beerName("porky dee").build());
     }
 }
