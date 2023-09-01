@@ -25,14 +25,20 @@ class BreweryClientTest {
 
     @Test
     void saveNewBeer() {
-        URI uri = breweryClient.saveNewBeer(BeerDto.builder().beerName("porky dee").build());
+        URI uri = breweryClient.saveNewBeer(BeerDto.builder()
+                .beerName("porky dee")
+                .beerStyle("IPA")
+                .build());
         assertNotNull(uri);
         System.out.println(uri.toString());
     }
 
     @Test
     void updateBeer() {
-        breweryClient.updateBeer(UUID.randomUUID(), BeerDto.builder().beerName("porky dee").build());
+        breweryClient.updateBeer(UUID.randomUUID(), BeerDto.builder()
+                .beerName("porky dee")
+                .beerStyle("IPA")
+                .build());
     }
 
     @Test
@@ -47,14 +53,14 @@ class BreweryClientTest {
 
     @Test
     void saveNewCustomer() {
-        URI uri = breweryClient.saveNewCustomer(CustomerDto.builder().name("Lil Jhon").build());
+        URI uri = breweryClient.saveNewCustomer(CustomerDto.builder().customerName("Lil Jhon").build());
         assertNotNull(uri);
         System.out.println(uri.toString());
     }
 
     @Test
     void updateCustomer() {
-        breweryClient.updateCustomer(UUID.randomUUID(), CustomerDto.builder().name("Big Jhon").build());
+        breweryClient.updateCustomer(UUID.randomUUID(), CustomerDto.builder().customerName("Big Jhon").build());
     }
 
     @Test
