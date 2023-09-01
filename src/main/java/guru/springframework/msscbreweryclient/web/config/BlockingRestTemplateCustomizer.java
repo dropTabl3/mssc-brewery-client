@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class BlockingRestTemplateCustomizer implements RestTemplateCustomizer {
 
-    public ClientHttpRequestFactory clientHttpRequestFactory(){
+    public ClientHttpRequestFactory clientHttpRequestFactory() {
         PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager();
         connectionManager.setMaxTotal(100);
         connectionManager.setDefaultMaxPerRoute(20);
