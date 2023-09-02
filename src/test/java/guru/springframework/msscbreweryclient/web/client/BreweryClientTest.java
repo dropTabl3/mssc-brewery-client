@@ -53,7 +53,7 @@ class BreweryClientTest {
 
     @Test
     void saveNewCustomer() {
-        URI uri = breweryClient.saveNewCustomer(CustomerDto.builder().customerName("Lil Jhon").build());
+        URI uri = breweryClient.saveNewCustomer(CustomerDto.builder().customerName("Lil").build());
         assertNotNull(uri);
         System.out.println(uri.toString());
     }
